@@ -1,6 +1,7 @@
 const express = require('express');
 const colors = require('colors');
 const dotenv = require('dotenv').config();
+const userRoute = require('./routes/user');
 
 
 // environment variables
@@ -12,6 +13,10 @@ const app = express();
 // express middlewares
 app.use(express.json());
 app.use(express.urlencoded( { extended : false } ));
+
+
+// API routes
+app.use('/api/v1/user', userRoute);
 
 
 
